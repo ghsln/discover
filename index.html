@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover Formosa - Let's Explore Taiwan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>  
+    <script src="https://cdn.amcharts.com/lib/5/map.js"></script>  
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>  
+    <script src="https://cdn.amcharts.com/lib/5/geodata/taiwanHigh.js"></script> 
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+
+<body>
+    <header>
+        <a href="#" class="brand">Discover Formosa</a>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#" class="where-link">Where to Go</a>
+                <a href="#" class="travel-link">Travel Guide</a>
+                <a href="#" class="activities-link">Activities</a>
+                <a href="#" class="contact-link">Contact Us</a>
+            </div>
+        </div>
+        <div class="act-box">
+            <div class="act-content">
+                <div class="act-inner-box">
+                    <div class="act-row">
+                        <img src="nature.jpg" alt="Nature Leaaves">
+                    </div>
+                    <div class="act-row">
+                        <h4>Nature</h4>
+                        <ul class="act-links">
+                            <li><a href="#">Rafting</a></li> 
+                            <li><a href="hiking.html">Hiking</a></li> 
+                            <li><a href="#">Paragliding</a></li> 
+                            <li><a href="#">Water Ski</a></li> 
+                            <li><a href="#">Diving</a></li> 
+                        </ul>
+                    </div>
+                </div>
+                <div class="act-inner-box">
+                    <div class="act-row">
+                        <img src="tea.jpg" alt="Tea">
+                    </div>
+                    <div class="act-row">
+                        <h4>Culture</h4>
+                        <ul class="act-links">
+                            <li><a href="#">Festivals</a></li> 
+                            <li><a href="#">Taiwanese Tea Culture</a></li> 
+                        </ul>
+                    </div>
+                </div>
+                <div class="act-inner-box">
+                    <div class="act-row">
+                        <img src="relaxation.jpg" alt="Cherry Blossoms">
+                    </div>
+                    <div class="act-row">
+                        <h4>Relaxation</h4>
+                        <ul class="act-links">
+                            <li><a href="#">Sightseeing Flowers</a></li> 
+                            <li><a href="#">Homestays</a></li>
+                        </ul>
+                    </div> 
+                </div>
+                <div class="act-inner-box">
+                    <div class="act-row">
+                        <img src="cuisine.jpg" alt="Xiao Long Bao">
+                    </div>
+                    <div class="act-row">
+                        <h4>Cuisine</h4>
+                        <ul class="act-links">
+                            <li><a href="#">Night Markets</a></li> 
+                            <li><a href="#">Vegetarian</a></li>
+                        </ul>
+                    </div> 
+                </div>                       
+            </div>
+        </div>
+        <div class="con-box">
+            <div class="con-content">
+                <div class="con-inner-box">
+                    <div class="con-row">
+                        <img src="facebook.png" alt="Facebook">
+                    </div>
+                    <div class="con-row">
+                        <a href="#" class="facebook">Facebook</a>
+                        <p>@discoverformosa</p>
+                    </div>
+                </div>
+                <div class="con-inner-box">
+                    <div class="con-row">
+                        <img src="instagram.png" alt="Instagram">
+                    </div>
+                    <div class="con-row">
+                        <a href="#" class="instagram">Instagram</a>
+                        <p>@discoverformosa</p>
+                    </div>
+                </div>
+                <div class="con-inner-box">
+                    <div class="con-row">
+                        <img src="youtube.png" alt="Youtube">
+                    </div>
+                    <div class="con-row">
+                        <a href="#" class="youtube">Youtube</a>
+                        <p>@discoverformosa</p>
+                    </div>
+                </div>                   
+            </div>
+        </div>
+        <div class="where-box">
+            <div class="where-content">
+                <div class="where-inner-box">
+                    <div class="where-row">
+                        <img src="northtaiwan.png" alt="Nothern Taiwan Map">
+                    </div>
+                    <div class="where-row">
+                        <h4>Nothern Taiwan</h4>
+                        <ul class="where-links">
+                            <li><a href="taipei.html">Taipei City</a></li> 
+                            <li><a href="#">New Taipei City</a></li>
+                            <li><a href="#">Taoyuan City</a></li>  
+                            <li><a href="#">Keelung City</a></li> 
+                            <li><a href="#">Hsinchu City/County</a></li> 
+                            <li><a href="#">Yilan City</a></li> 
+                        </ul>
+                    </div>
+                </div>
+                <div class="where-inner-box">
+                    <div class="where-row">
+                        <img src="centraltaiwan.png" alt="Central Taiwan Map">
+                    </div>
+                    <div class="where-row">
+                        <h4>Central Taiwan</h4>
+                        <ul class="where-links">
+                            <li><a href="#">Miaoli County</a></li> 
+                            <li><a href="#">Taichung City</a></li>
+                            <li><a href="#">Changhua County</a></li>
+                            <li><a href="#">Taichung County</a></li> 
+                            <li><a href="#">Yunlin County</a></li> 
+                        </ul>
+                    </div>
+                </div>
+                <div class="where-inner-box">
+                    <div class="where-row">
+                        <img src="southerntaiwan.png" alt="Southern Taiwan Map">
+                    </div>
+                    <div class="where-row">
+                        <h4>Southern Taiwan</h4>
+                        <ul class="where-links">
+                            <li><a href="#">Chiayi City/County</a></li> 
+                            <li><a href="#">Tainan City</a></li>
+                            <li><a href="#">Kaohsiung City</a></li>
+                            <li><a href="#">Pingtung County</a></li>
+                        </ul>
+                    </div> 
+                </div>
+                <div class="where-inner-box">
+                    <div class="where-row">
+                        <img src="easterntaiwan.png" alt="Eastern Taiwan Map">
+                    </div>
+                    <div class="where-row">
+                        <h4>Eastern Taiwan</h4>
+                        <ul class="where-links">
+                            <li><a href="#">Hualien County</a></li> 
+                            <li><a href="#">Taitung County</a></li>
+                        </ul>
+                    </div> 
+                </div>
+                <div class="where-inner-box">
+                    <div class="where-row">
+                        <img src="outlyingislang.png" alt="Off Shore Island Map">
+                    </div>
+                    <div class="where-row">
+                        <h4>Outlying Islands</h4>
+                        <ul class="where-links">
+                            <li><a href="#">Lienchiang County</a></li> 
+                            <li><a href="#">Kinmen County</a></li>
+                            <li><a href="#">Penghu County</a></li>
+                        </ul>
+                    </div> 
+                </div>                        
+            </div>
+        </div>
+        <div class="travel-box">
+            <div class="travel-pill">
+                <a href="#" class="pill-1">About Taiwan</a>
+                <a href="#" class="pill-2">Getting Around</a>
+                <a href="#" class="pill-3">Essential Information</a>
+            </div>
+            <div class="travel-content-1">
+                <div class="travel-inner-box">
+                    <div class="travel-row">
+                        <ul class="travel-links">
+                            <li><a href="#">World Heritage</a></li> 
+                            <li><a href="app.html">Useful Apps</a></li> 
+                            <li><a href="ethic.html">Taiwanese Etiquette</a></li>
+                            <p><br>Weather</p> 
+                            <ul class="weather-links">
+                                <li><a href="#">Spring</a></li> 
+                                <li><a href="#">Summer</a></li>
+                                <li><a href="#">Fall</a></li> 
+                                <li><a href="#">Winter</a></li>
+                            </ul> 
+                        </ul>
+                    </div>
+                </div>                   
+            </div>
+            <div class="travel-content-2">
+                <div class="travel-inner-box">
+                    <div class="travel-row">
+                        <ul class="travel-links">
+                            <p>Transportation</p>
+                            <li><a href="transportation.html#public">Public Transportation</a></li> 
+                            <li><a href="transportation.html#private">Private Transportation</a></li>
+                            <p><br>Accommodations</p>
+                            <li><a href="luxuryacc.html">Luxury Accommodations</a></li> 
+                            <li><a href="budgetacc.html">Budget Accommodations</a></li>
+                            <li><a href="#">Online Reservation Sites</a></li>
+                            <br>
+                            <li><a href="#">List of Tourist Information Center</a></li>
+                        </ul>
+                    </div>
+                </div>                   
+            </div>
+            <div class="travel-content-3">
+                <div class="travel-inner-box">
+                    <div class="travel-row">
+                        <ul class="travel-links">
+                            <li><a href="#">Taiwan Visitors Hotline</a></li> 
+                            <li><a href="law.html">Local Laws</a></li> 
+                            <li><a href="#">Travel Insurance Taiwan</a></li>
+                        </ul>
+                    </div>
+                </div>                   
+            </div>
+        </div>
+    </header>
+
+    <section class="home">
+        <img class="image-slide active" src="taipeibanner.jpeg"></img>
+        <img class="image-slide" src="kaohsiungbanner.jpg"></img>
+        <img class="image-slide" src="hualienbanner.jpg"></img>
+        <div class="content">
+            <h1>Let's Explore<br><span>Taiwan!</span></h1>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+
+    <section class="region">
+        <div class="region-title">
+            <p>Cities and Counties</p>
+        </div>
+        <div class="region-content">
+            <div class="card-container">
+                <div class="container swiper">
+                    <div class="card-wrapper">
+                        <ul class="card-list swiper-wrapper">
+                            <li class="card-item swiper-slide">
+                                <a href="taipei.html" class="card-link">
+                                    <img src="taipeicity.jpg" alt="Taipei City" class="card-image">
+                                    <p class="badge city">City</p>
+                                    <h2 class="card-title">Taipei City</h2>
+                                    <p class="desc">Taipei is Taiwan's capital and the center of culture, politics, and business. It's known for landmarks like Taipei 101 and its vibrant night markets.</p>
+                                    <button class="card-button">&#8594</button>
+                                </a>
+                            </li>
+                            <li class="card-item swiper-slide">
+                                <a href="#" class="card-link">
+                                    <img src="newtaipeicity.jpg" alt="New Taipei City" class="card-image">
+                                    <p class="badge city">City</p>
+                                    <h2 class="card-title">New Taipei City</h2>
+                                    <p class="desc">New Taipei surrounds Taipei and offers a mix of urban life and nature. It includes famous spots like Jiufen and Yehliu Geopark.</p>
+                                    <button class="card-button">&#8594</button>
+                                </a>
+                            </li>
+                            <li class="card-item swiper-slide">
+                                <a href="#" class="card-link">
+                                    <img src="yilancity.jpg" alt="Yilan City" class="card-image">
+                                    <p class="badge city">City</p>
+                                    <h2 class="card-title">Yilan City</h2>
+                                    <p class="desc">Yilan offers lush mountains, hot springs, and a slower lifestyle. It's popular for its festivals and scenic coastline.</p>
+                                    <button class="card-button">&#8594</button>
+                                </a>
+                            </li>
+                            <li class="card-item swiper-slide">
+                                <a href="#" class="card-link">
+                                    <img src="taichungcity.png" alt="Taichung City" class="card-image">
+                                    <p class="badge city">City</p>
+                                    <h2 class="card-title">Taichung City</h2>
+                                    <p class="desc">Taichung is known for its pleasant climate and creative atmosphere. It features attractions like the National Taichung Theater and Miyahara.</p>
+                                    <button class="card-button">&#8594</button>
+                                </a>
+                            </li>
+                            <li class="card-item swiper-slide">
+                                <a href="#" class="card-link">
+                                    <img src="hsinchucity.jpg" alt="Hsinchu City/County" class="card-image">
+                                    <p class="badge city">City</p>
+                                    <h2 class="card-title">Hsinchu City</h2>
+                                    <p class="desc">Hsinchu is known as Taiwan's tech hub due to the Science Park. Windy weather and rice noodles are two of its trademarks.</p>
+                                    <button class="card-button">&#8594</button>
+                                </a>
+                            </li>
+                            <li class="card-item swiper-slide">
+                                <a href="#" class="card-link">
+                                    <img src="keelungcity.jpg" alt="Keelung City" class="card-image">
+                                    <p class="badge city">City</p>
+                                    <h2 class="card-title">Keelung City</h2>
+                                    <p class="desc">Keelung is a rainy port city in northern Taiwan. Its Miaokou Night Market is popular with visitors.</p>
+                                    <button class="card-button">&#8594</button>
+                                </a>
+                            </li>
+                            <li class="card-item swiper-slide">
+                                <a href="#" class="card-link">
+                                    <img src="miaolicounty.jpg" alt="Miaoli County" class="card-image">
+                                    <p class="badge county">County</p>
+                                    <h2 class="card-title">Miaoli County</h2>
+                                    <p class="desc">Miaoli is another strong Hakka region with peaceful rural scenery. Visitors enjoy activities like strawberry picking in winter.</p>
+                                    <button class="card-button">&#8594</button>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-slide-button swiper-button-prev"></div>
+                        <div class="swiper-slide-button swiper-button-next"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container">
+                <div class="map">
+                    <div id="chartdiv"></div>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>    
+        <script src="map.js"></script>
+    </section>
+
+    <section class="info">
+        <h4 class="info-title">Information You Should Know</h4>
+        <div class="info-flex">
+            <div class="info-box">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <img src="passport.png" alt="Passport">
+                    </div>
+                </div>
+                <h4>Visa Information</h4>
+                <p><a href="visa.html">Requirements</a></p>
+                <p><a href="visa.html#contact-embassy">Embassies' Contact</a></p>
+            </div>
+            <div class="info-box">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <img src="bus.png" alt="Bus">
+                    </div>
+                </div>
+                <h4>Transportation</h4>
+                <p><a href="transportation.html#public">Public Transportation</a></p>
+                <p><a href="transportation.html#private">Private Transportation</a></p>
+            </div>
+            <div class="info-box">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <img src="airplane.png" alt="Airplane">
+                    </div>
+                </div>
+                <h4>Airport Access</h4>
+                <p><a href="#">How to Get To Taiwan</a></p>
+                <p><a href="airport.html">International Airport</a></p>
+            </div>
+            <div class="info-box">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <img src="hotel.png" alt="Hotel">
+                    </div>
+                </div>
+                <h4>Accommodation</h4>
+                <p><a href="luxuryacc.html">Luxury Accommodations</a></p>
+                <p><a href="budgetacc.html">Budget Accommodations</a></p>
+                <p><a href="#">Online Reservation Sites</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="explore-color">
+        <div class="explore-taiwan">
+            <h1>Explore Taiwan</h1>
+            <div class="explore-grid">
+                <div class="explore-card">
+                    <a href="hiking.html">
+                    <img src="hikingexplore.jpg" alt="Hiking" />
+                    <div class="label">Hiking</div>
+                    </a>
+                </div>
+                <div class="explore-card">
+                    <img src="cherryexplore.jpg" alt="Cherry Blossoms" />
+                    <div class="label">Cherry Blossoms</div>
+                </div>
+                <div class="explore-card">
+                    <img src="templesexplore.jpg" alt="Temples" />
+                    <div class="label">Temples</div>
+                </div>
+                <div class="explore-card">
+                    <img src="cuisineexplore.jpg" alt="Cuisine" />
+                    <div class="label">Cuisine</div>
+                </div>
+                <div class="explore-card">
+                    <img src="snowexplore.jpg" alt="Snow" />
+                    <div class="label">Snow</div>
+                </div>
+                <div class="explore-card">
+                    <img src="beachesexplore.jpg" alt="Beaches" />
+                    <div class="label">Beaches</div>
+                </div>
+                <div class="explore-card">
+                    <img src="museumexplore.jpg" alt="Museums" />
+                    <div class="label">Museums</div>
+                </div>
+                <div class="explore-card">
+                    <img src="festivalexplore.jpg" alt="Festivals" />
+                    <div class="label">Festivals</div>
+                </div>
+                <div class="explore-card">
+                    <img src="shoppingexplore.jpeg" alt="Shopping" />
+                    <div class="label">Shopping</div>
+                </div>
+            </div>        
+        </div>
+    </section>
+    
+    
+    <section class="hero">
+        <div class="hero-image">
+            <img src="hero.jpg" alt="Hero Image">
+        </div>
+    </section>
+
+    <section class="start-trip">
+        <h1>Start Your Trip</h1>
+        <div class="start-box">
+            <div class="start-card">
+                <img src="map.png" alt="Before You Go" />
+                <div class="start-title">Before You Go</div>
+                <div class="start-link">
+                    <a href="#">Timing</a>
+                    <a href="#">Finance</a>
+                    <a href="#">Disaster</a>
+                    <a href="#">Immigration</a>
+                    <a href="#">Special Guides</a>
+                    <a href="#">Practicalities</a>
+                </div>
+            </div>
+
+            <div class="start-card">
+                <img src="itinerary.png" alt="Itinerary Ideas" />
+                <div class="start-title">Itinerary Ideas</div>
+                <div class="start-link">
+                    <a href="#">Itinerary Routes</a>
+                    <a href="#">City Highlights</a>
+                    <a href="#">Hidden Spots</a>
+                    <a href="#">Nature Trips</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section where-to-go">
+                <h3>Where to Go</h3>
+                <ul>
+                    <li><a href="#">Taipei City</a></li>
+                    <li><a href="#">New Taipei City</a></li>
+                    <li><a href="#">Taoyuan City</a></li>
+                    <li><a href="#">Taichung City</a></li>
+                    <li><a href="#">Tainan City</a></li>
+                    <li><a href="#">Kaohsiung City</a></li>
+                    <li><a href="#">Keelung City</a></li>
+                    <li><a href="#">Hualien City</a></li>
+                    <li><a href="#">Yilan City</a></li>
+                </ul>
+            </div>
+            <div class="footer-section explore">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="hiking.html">Hiking</a></li>
+                    <li><a href="#">Cherry Blossoms</a></li>
+                    <li><a href="#">Temples</a></li>
+                    <li><a href="#">Cuisine</a></li>
+                    <li><a href="#">Snow</a></li>
+                    <li><a href="#">Beaches</a></li>
+                    <li><a href="#">Museums</a></li>
+                    <li><a href="#">Festivals</a></li>
+                    <li><a href="#">Shopping</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Discover Formosa. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

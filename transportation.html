@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation in Taiwan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            background-color: #003B8E;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+        
+        .header {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+        
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 80%;
+        }
+        
+        .header-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav {
+            background-color: #8B1E1E;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            text-align: center;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+            text-align: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            padding-top: 1rem;
+            padding-bottom: 0;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin: 0;
+        }
+        
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            transition: 0.4s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            background-color: rgba(255, 255, 255, 0.877);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(1, 0, 6, 0.474);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #8B1E1E;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ffcc00;
+        }
+        
+        h3 {
+            color: #8B1E1E;
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .public {
+            background: none;
+            box-shadow: none;
+            padding: 0;
+        }
+
+        .public h2 {
+            color: #feb54f;
+            border-color: #feb54f;;            
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-style: italic;
+            border: 1px solid #ccc;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+
+        .image-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 1.5rem 0;
+            justify-content: center;
+        }      
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border: 1px solid #b6b4b4;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            color: #8B1E1E;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .highlight-box {
+            background-color: #fff2df;
+            border-left: 4px solid #feb54f;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 10px;
+        }
+
+
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }         
+        }
+
+        @media (max-width: 1024px) {
+            .image-box {
+                display: block;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="header">
+        <img src="transportation.jpeg" alt="Transportation" class="header-image">
+        <div class="header-content">
+            <h1>Transportation in Taiwan</h1>
+            <p>Your trusted friend to travel through Taiwan</p>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#easycard">EasyCard/iPass</a></li>
+                <li><a href="#tra">TRA</a></li>
+                <li><a href="#thsr">THSR</a></li>
+                <li><a href="#mrt">MRT</a></li>
+                <li><a href="#bus">Bus</a></li>
+                <li><a href="#youbike">YouBike</a></li>
+                <li><a href="#taxis">Taxis</a></li>
+                <li><a href="#important-contact">Important Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <section id="transportation">
+            <h2>Getting Around Taiwan</h2>
+
+            <p>Taiwan's transportation system is one of the most convenient and visitor-friendly in Asia. Whether you're traveling between cities or heading to a local market, Taiwan offers many fast, reliable, and affordable options. Once you understand how each mode connects, you can easily mix and match TRA, High-Speed Rail, MRT, buses, YouBike, and taxis.</p>
+        </section>
+
+        <section id="easycard">
+            <h2>EasyCard/iPass - Your Transport Super Card</h2>
+            <p>EasyCard and iPass are the most essential items for traveling around Taiwan. They offer seamless access to almost all public transportation systems.</p>
+            <img src="easycard.jpg" alt="EasyCard" class="content-image">
+            <h3>Where You Can Use EasyCard/iPass</h3>
+            <ul>
+                <li>MRT systems</li>
+                <li>City buses</li>
+                <li>YouBike</li>
+                <li>TRA (for local and short-distance rides)</li>
+                <li>Some taxis and convenience stores</li>
+            </ul>
+
+            <h3>Where to Buy</h3>
+            <ul>
+                <li>MRT stations</li>
+                <li>Convenience stores (7-Eleven, FamilyMart)</li>
+                <li>Taoyuan Airport counters</li>
+            </ul>
+
+            <h3>Pricing</h3>
+            <ul>
+                <li>Card deposit: around NTD $100</li>
+                <li>Load any amount as needed</li>
+                <li>Cheaper fares than cash on many routes</li>
+            </ul>
+        </section>
+
+        <section id="public" class="public">
+            <h2>Public Transportation</h2>
+        </section>
+
+        <section id="tra">
+            <h2>Taiwan Railway (TRA)</h2>
+            <p>TRA connects the entire island, covering big cities and small towns, especially along the scenic east coast.</p>
+            <img src="tra.jpg" alt="TRA" class="content-image">
+            <h3>How to Use TRA</h3>
+            <ul>
+                <li>Use EasyCard for short or mid-distance travel</li>
+                <li>Book tickets in advance for long-distance or express trains</li>
+                <li>TRA Tourist Pass (TR Pass) offers unlimited rides</li>
+                <li>Day/Tour Pass allows unlimited rides within specific zones on the validation day</li>
+            </ul>
+
+            <h3>How to Buy Tickets</h3>
+            <ul>
+                <li>Purchase at stations (counter or machine)</li>
+                <li>Buy online and collect at stations, post offices, or convenience stores</li>
+                <li>Convenience store pickup requires entering booking info + passport/ID number</li>
+            </ul>
+
+            <h3>Online Booking</h3>
+            <p>Website: <a href="https://tip.railway.gov.tw/tra-tip-web/tip?lang=EN_US" target="_blank">https://tip.railway.gov.tw/tra-tip-web/tip?lang=EN_US</a></p>
+
+            <div class="highlight-box">
+                <p><strong>Important Notes</strong><br></p>
+                <ul>
+                    <li>Bookings open 28 days before departure</li>
+                    <li>Pre-booking is essential for busy days</li>
+                    <li>Pay within 2 days after booking</li>
+                    <li>Same-day bookings must be paid at least 30 minutes before departure</li>
+                </ul>
+            </div>
+            
+        </section>
+
+        <section id="thsr">
+            <h2>THSR - Taiwan High-Speed Rail</h2>
+            <p>THSR runs along the west coast, connecting Taipei to Kaohsiung in 1.5-2 hours with speeds up to 300 km/h.</p>
+            <img src="thsr.jpg" alt="THSR" class="content-image">
+            <h3>Types of THSR Tickets</h3>
+            <ul>
+                <li><strong>Business Car:</strong> Reserved, spacious seating</li>
+                <li><strong>Standard Car:</strong> Reserved seating</li>
+                <li><strong>Non-Reserved Car:</strong> Choose any available seat in designated cars</li>
+            </ul>
+
+            <h3>How to Ride THSR</h3>
+            <ul>
+                <li>Buy tickets online (<a href="https://en.thsrc.com.tw/" target="_blank">https://en.thsrc.com.tw/</a>), at stations, or via travel platforms</li>
+                <li>Discounts available: Early Bird (10-35%), student fares, tourist passes</li>
+                <li>Enter by inserting ticket at the gate</li>
+                <li>HSR stations are often outside city centers—plan follow-up travel</li>
+            </ul>
+        </section>
+
+        <section id="mrt">
+            <h2>MRT (Metro/Subway)</h2>
+            <p>Taipei, New Taipei, Taoyuan, and Kaohsiung operate clean, efficient MRT systems with English-friendly navigation.</p>
+            <div class="image-box">
+                <img src="taoyuanmetro.jpg" alt="Taoyuan Metro" class="content-image">
+                <img src="taipeimrt.JPG" alt="Taipei MRT" class="content-image">
+            </div>
+            <h3>How to Use MRT</h3>
+            <ul>
+                <li>Tap EasyCard when entering and exiting</li>
+                <li>Ticket machines accept coins; counters sell single-journey tokens</li>
+                <li>Operating hours typically 6:00 AM - midnight</li>
+                <li>No food or drink allowed beyond the gates</li>
+            </ul>
+
+            <h3>MRT Websites</h3>
+            <ul>
+                <li>Taoyuan Metro: <a href="https://www.tymetro.com.tw/tymetro-new/en/index.php" target="_blank">https://www.tymetro.com.tw/tymetro-new/en/index.php</a></li>
+                <li>Taipei Metro: <a href="https://english.metro.taipei/Default.aspx" target="_blank">https://english.metro.taipei/Default.aspx</a></li>
+                <li>Kaohsiung Metro: <a href="https://www.krtc.com.tw/eng/" target="_blank">https://www.krtc.com.tw/eng/</a></li>
+            </ul>
+        </section>
+
+        <section id="bus">
+            <h2>Buses in Taiwan</h2>
+            <p>Buses cover cities, rural towns, mountains, and attractions not easily reached by TRA, MRT, or HSR.</p>
+            <img src="bus.jpg" alt="Bus" class="content-image">
+            <h3>How to Ride Buses</h3>
+            <ul>
+                <li>Tap EasyCard when boarding (and sometimes when exiting)</li>
+                <li>Google Maps works well for routes</li>
+                <li>Typical fare: NT$15-30 for city rides</li>
+                <li>Track schedules using Bus+ or Bus Taiwan apps</li>
+            </ul>
+        </section>
+
+        <section id="private" class="public">
+            <h2>Private Transportation</h2>
+        </section>
+
+        <section id="youbike">
+            <h2>YouBike</h2>
+            <p>YouBike is ideal for sightseeing riversides, exploring neighborhoods, or traveling short distances.</p>
+            <img src="youbike.jpg" alt="Youbike" class="content-image">
+            <h3>How to Rent a YouBike</h3>
+            <ul>
+                <li>Register EasyCard/iPass in the YouBike app (passport + local phone number may be required)</li>
+                <li>Tap your card at the dock to rent</li>
+                <li>Return to any dock and tap your card to complete payment</li>
+            </ul>
+
+            <h3>Pricing</h3>
+            <ul>
+                <li>The first 30 minutes often free</li>
+                <li>Rates increase with time used</li>
+            </ul>
+        </section>
+
+        <section id="taxis">
+            <h2>Taxis</h2>
+            <p>Taxis are convenient for late-night travel, luggage, and places not covered well by public transit.</p>
+            <img src="taxi.png" alt="Taxi" class="content-image">
+            <h3>How Taxis Work</h3>
+            <ul>
+                <li>Fares based on distance + time using meters</li>
+                <li>Extra charges apply late at night or on highways</li>
+                <li>Apps (Uber, LINE Taxi, Taiwan Taxi, yoxi) show estimated fares</li>
+            </ul>
+
+            <h3>How to Catch a Taxi</h3>
+            <ul>
+                <li>Hail one on the street or at taxi stands</li>
+                <li>Yellow cars with a red light on are available</li>
+                <li>Cash always accepted; some accept cards/mobile payments</li>
+            </ul>
+
+            <h3>Safety & Etiquette</h3>
+            <ul>
+                <li>Use official taxis or reputable apps</li>
+                <li>Wear seatbelts and secure belongings</li>
+                <li>Ask for receipts before the ride</li>
+            </ul>
+            
+        </section>
+
+        <section id="important-contact">
+            <h2>Important Numbers</h2>
+            <ul>
+                <li><strong>Taipei City</strong>
+                    <ul>
+                        <li>Traffic Division: +886-2311-6409, +886-2375-2100</li>
+                        <li>Department of Transportation: +886-2-2725-6888</li>
+                        <li>Public Transportation Office: +886-2-2759-2677</li>
+                    </ul>
+                </li>
+                <li><strong>Taoyuan Airport Taxi:</strong> +886-3-398-5558</li>
+                <li><strong>Taichung City</strong>
+                    <ul>
+                        <li>Transportation Bureau: +886-4-2228-9111</li>
+                        <li>Motor Vehicles Office: +886-4-2691-3464</li>
+                    </ul>
+                </li>
+                <li><strong>Tainan City:</strong> +886-6-295-3221</li>
+                <li><strong>Kaohsiung City:</strong> +886-7-222-6816</li>
+                <li><strong>Kaohsiung International Airport</strong>
+                    <ul>
+                        <li>Aviation Police Bureau: +886-7-801-1447</li>
+                        <li>Email: kia@mail.kia.gov.tw</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+</html>

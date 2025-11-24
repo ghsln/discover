@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Apps in Taiwan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #003B8E;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0056b3;
+        }
+        
+        .header {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+        
+        .header-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            width: 80%;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .header-content p {
+            font-size: 1.3rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav {
+            background-color: #8B1E1E;
+            top: 0;
+            position: sticky;
+            z-index: 100;
+            text-align: center;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 10px;
+            text-align: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            padding-top: 1rem;
+            padding-bottom: 0;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin: 0;
+        }
+        
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+            transition: 0.4s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #ffcc00;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        section {
+            background-color: rgba(255, 255, 255, 0.877);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(1, 0, 6, 0.474);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        section:hover {
+            transform: translateY(-5px);
+        }
+        
+        h2 {
+            color: #8B1E1E;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #ffcc00;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        h3 {
+            color: #8B1E1E;
+            margin: 1.5rem 0 0.5rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 1.5rem 0;
+        }
+        
+        .app-card {
+            background-color: #fef8f8;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border-left: 4px solid #8B1E1E;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .app-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .app-icon img {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.5rem;
+            color: #8B1E1E;
+        }
+        
+        .app-name {
+            font-weight: 700;
+            color: #8B1E1E;
+            font-size: 1.2rem;
+        }
+        
+        .app-category {
+            display: inline-block;
+            background-color: #8B1E1E;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .highlight-box {
+            background-color: #fff2df;
+            border-left: 4px solid #feb54f;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: #8B1E1E;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .download-btn:hover {
+            background-color: #6d1616;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .app-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    
+    <div class="header">
+        <img src="apps.jpg" alt="Smartphone with apps" class="header-image">
+        <div class="header-content">
+            <h1>Useful Apps in Taiwan</h1>
+            <p>Navigate, translate, and explore Taiwan with these must-have smartphone applications</p>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#navigation">Navigation & Translation</a></li>
+                <li><a href="#transportation">Transportation</a></li>
+                <li><a href="#tours-food">Tours & Food</a></li>
+                <li><a href="#communication">Communication & Payments</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <!-- Overview -->
+        <section id="overview">
+            <h2>Essential Apps for Your Taiwan Adventure</h2>
+            <p>Navigating Taiwan is incredibly easy with a smartphone. Having the right apps will transform your travel experience, helping you with everything from finding the next high-speed train to translating a menu. Here are the must-have applications for any visitor.</p>
+            
+            <div class="highlight-box">
+                <p><strong>Tip:</strong> Download these apps before your trip and set up any necessary accounts. For transportation apps like T-Express, you'll need to register with a credit card to purchase tickets.</p>
+            </div>
+        </section>
+
+        <!-- Navigation & Translation -->
+        <section id="navigation">
+            <h2><i class="fas fa-map-marked-alt"></i> Navigation & Translation</h2>
+            <p>These apps will help you find your way around Taiwan and overcome language barriers, making your travels smoother and more enjoyable.</p>
+            
+            <div class="app-grid">
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="googlemaps.png" alt="Google Maps">
+                        </div>
+                        <div class="app-name">Google Maps</div>
+                    </div>
+                    <span class="app-category">Navigation</span>
+                    <p>This is your absolute essential. It provides accurate GPS navigation, detailed public transportation routes and schedules (including bus arrival times), and comprehensive business listings. You can even download offline maps for areas with spotty service.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="googletranslate.png" alt="Google Translate">
+                        </div>
+                        <div class="app-name">Google Translate</div>
+                    </div>
+                    <span class="app-category">Translation</span>
+                    <p>Invaluable for communicating and understanding your surroundings. Its camera function can instantly translate menus, signs, and packaging, while the conversation mode can help bridge language gaps with locals.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transportation -->
+        <section id="transportation">
+            <h2><i class="fas fa-subway"></i> Transportation</h2>
+            <p>Taiwan has an excellent transportation network. These apps will help you navigate trains, buses, and ride-sharing services with ease.</p>
+            
+            <div class="app-grid">
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="thsrapp.png" alt="THSR App">
+                        </div>
+                        <div class="app-name">Taiwan High Speed Rail (THSR) App (T-Express)</div>
+                    </div>
+                    <span class="app-category">Trains</span>
+                    <p>The official app for booking tickets on Taiwan's bullet train. You can purchase, change, and refund tickets, and most importantly, use a QR code on your phone as your ticket, saving you time at the station.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="traapp.png" alt="TRA App">
+                        </div>
+                        <div class="app-name">Taiwan Railway App</div>
+                    </div>
+                    <span class="app-category">Trains</span>
+                    <p>For journeys along the scenic east coast or to smaller cities not served by the High-Speed Rail, this app is perfect. It provides schedules, fares, and booking for the comprehensive Taiwan Railway Administration (TRA) network.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="uber.png" alt="UBER App">
+                        </div>
+                        <div class="app-name">UBER</div>
+                    </div>
+                    <span class="app-category">Ride-hailing</span>
+                    <p>Widely available in major cities like Taipei, Taichung, and Kaohsiung. It's a familiar and convenient option for ride-hailing.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="bus+.png" alt="Bus+ App">
+                        </div>
+                        <div class="app-name">Bus+</div>
+                    </div>
+                    <span class="app-category">Buses</span>
+                    <p>This app is a lifesaver for navigating the extensive local bus systems across Taiwan. It provides real-time bus locations and estimated arrival times, ensuring you never miss your ride.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="youbikeapp.jpg" alt="Youbike App">
+                        </div>
+                        <div class="app-name">YouBike App</div>
+                    </div>
+                    <span class="app-category">Bike Sharing</span>
+                    <p>Taiwan's public bike-sharing system is excellent. The official YouBike app shows station locations and bike availability. For ultimate convenience, get an EasyCard—you can tap it directly on the bike's reader without needing your phone.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tours, Activities & Food -->
+        <section id="tours-food">
+            <h2><i class="fas fa-utensils"></i> Tours, Activities & Food</h2>
+            <p>Discover amazing experiences and delicious food with these apps that help you book activities and order meals.</p>
+            
+            <div class="app-grid">
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="klook.png" alt="Klook App">
+                        </div>
+                        <div class="app-name">Klook</div>
+                    </div>
+                    <span class="app-category">Activities & Tours</span>
+                    <p>A leading travel activity platform in Asia. It's excellent for booking popular tours, attraction tickets (like Taipei 101 observatory), SIM cards, and airport express transfers, often at a discount.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="foodpanda.png" alt="Food Panda App">
+                        </div>
+                        <div class="app-name">Foodpanda</div>
+                    </div>
+                    <span class="app-category">Food Delivery</span>
+                    <p>This food delivery giant is hugely popular in Taiwan. It's perfect for those times when you're tired from a day of exploring or want to enjoy a feast from a popular night market restaurant without the crowds. It also offers grocery delivery.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="uber.png" alt="Uber Eats App">
+                        </div>
+                        <div class="app-name">Uber Eats</div>
+                    </div>
+                    <span class="app-category">Food Delivery</span>
+                    <p>Another popular food delivery option in Taiwan's major cities. Great for accessing a wide variety of restaurants and cuisines from the comfort of your accommodation.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Communication & Payments -->
+        <section id="communication">
+            <h2><i class="fas fa-comments"></i> Communication & Payments</h2>
+            <p>Stay connected and manage your finances with these essential communication and currency apps.</p>
+            
+            <div class="app-grid">
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="line.png" alt="LINE App">
+                        </div>
+                        <div class="app-name">LINE</div>
+                    </div>
+                    <span class="app-category">Messaging</span>
+                    <p>This is the dominant messaging app in Taiwan, used by almost everyone. If you book a private tour or need to communicate with a homestay host, they will almost certainly use LINE. It's also used for news and official accounts.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+                
+                <div class="app-card">
+                    <div class="app-header">
+                        <div class="app-icon">
+                            <img src="xecur.png" alt="XE Currency App">
+                        </div>
+                        <div class="app-name">XE Currency</div>
+                    </div>
+                    <span class="app-category">Finance</span>
+                    <p>A reliable and easy-to-use app for quick currency conversions between New Taiwan Dollars (NT$) and your home currency.</p>
+                    <a href="#" class="download-btn">Download App</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
