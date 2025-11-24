@@ -15,7 +15,7 @@
         body {
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #003B8E 0%, #0056b3 100%);
+            background: linear-gradient(#003B8E, #0056b3);
         }
         
         a {
@@ -25,7 +25,7 @@
         
         .header {
             position: relative;
-            height: 500px;
+            height: 400px;
             overflow: hidden;
         }
         
@@ -33,7 +33,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(0.7);
+            filter: brightness(0.8);
         }
         
         .header-content {
@@ -47,20 +47,20 @@
         }
         
         .header-content h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .header-content p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             max-width: 900px;
             margin: 0 auto;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
         nav {
-            background-color: #2E7D32;
+            background-color: #8B1E1E;
             top: 0;
             position: sticky;
             z-index: 100;
@@ -74,6 +74,7 @@
             align-items: center;
             padding: 0 10px;
             text-align: center;
+            font-size: 0.9rem;
         }
         
         .nav-links {
@@ -83,7 +84,7 @@
         
         .nav-links li {
             padding-top: 1rem;
-            padding-bottom: 0;
+            padding-bottom: 1rem;
             padding-left: 1rem;
             padding-right: 1rem;
             margin: 0;
@@ -107,20 +108,36 @@
         
         section {
             background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
+            border-radius: 5px;
             box-shadow: 0 8px 25px rgba(1, 0, 6, 0.15);
             padding: 2.5rem;
             margin-bottom: 3rem;
             transition: transform 0.3s ease;
             border: 1px solid #e0e0e0;
         }
+
+        .hiking-trails {
+            background: none;
+            border: none;
+            box-shadow: none;
+            padding: 0;
+            margin-bottom: 3rem;
+        }
+
+        .hiking-trails h2 {
+            color: #feb54f;
+        }
         
+        .hiking-trails p {
+            color: #F4E8D8;
+        }
+
         section:hover {
             transform: translateY(-5px);
         }
         
         h2 {
-            color: #2E7D32;
+            color: #8B1E1E;
             margin-bottom: 1.5rem;
             padding-bottom: 0.5rem;
             border-bottom: 3px solid #FF9800;
@@ -161,14 +178,22 @@
             color: white;
         }
         
-        .moderate {
+        .medium {
             background-color: #FF9800;
             color: white;
         }
+
+        .medium .trail-name {
+            color: #FF9800;
+        }
         
-        .difficult {
+        .hard {
             background-color: #f44336;
             color: white;
+        }
+
+        .hard .trail-name {
+            color: #f44336;
         }
         
         .trail-grid {
@@ -177,14 +202,26 @@
             gap: 30px;
             margin: 2rem 0;
         }
+
+        .trail-grid p {
+            color: #333;
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 3px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #737373;
+        }
         
         .trail-card {
             background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
-            border-radius: 12px;
+            border-radius: 5px;
             padding: 25px;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            border: 1px solid #e0e0e0;
             position: relative;
             overflow: hidden;
         }
@@ -202,11 +239,11 @@
             background-color: #4CAF50;
         }
         
-        .trail-card.moderate::before {
+        .trail-card.medium::before {
             background-color: #FF9800;
         }
         
-        .trail-card.difficult::before {
+        .trail-card.hard::before {
             background-color: #f44336;
         }
         
@@ -230,8 +267,12 @@
         }
         
         .trail-location {
-            color: #666;
+            color: #737373;
             font-size: 1rem;
+        }
+
+        .trail-location i {
+            margin-right: 5px;
         }
         
         .trail-features {
@@ -247,13 +288,25 @@
         
         .feature i {
             margin-right: 10px;
-            color: #2E7D32;
             width: 20px;
+        }
+
+        .easy .feature i {
+            color: #2E7D32;
+        }
+
+        .medium .feature i {
+            color: #feb54f;
+        }
+
+        .hard .feature i {
+            color: #f44336;
         }
         
         .permit-notice {
-            background-color: #FFF3E0;
-            border-left: 4px solid #FF9800;
+            background-color: #fff1f0;
+            border-left: 4px solid #f44336;
+            color: #333;
             padding: 12px 15px;
             margin: 15px 0;
             border-radius: 0 5px 5px 0;
@@ -261,27 +314,22 @@
         }
         
         .highlight-box {
-            background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
-            border-left: 5px solid #4CAF50;
+            background: #F4E8D8;
+            border-left: 5px solid #feb54f;
             padding: 1.8rem;
             margin: 2rem 0;
-            border-radius: 0 10px 10px 0;
+            border-radius: 0 5px 5px 0;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         .highlight-box p {
+            color: #333;
             margin-bottom: 0;
             font-size: 1.1rem;
         }
         
         .difficulty-section {
             margin-bottom: 3rem;
-        }
-        
-        .section-icon {
-            font-size: 1.8rem;
-            margin-right: 10px;
-            color: #2E7D32;
         }
         
         @media (max-width: 768px) {
@@ -324,10 +372,10 @@
 <body>
     
     <div class="header">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Taiwan Mountain Landscape" class="header-image">
+        <img src="hiking.jpg" alt="Hiking" class="header-image">
         <div class="header-content">
-            <h1>Taiwan Hiking Guide</h1>
-            <p>From coastal trails to high mountain peaks, Taiwan is a hiker's paradise</p>
+            <h1>Hiking in Taiwan</h1>
+            <p>See the beauty of Taiwan from the mountain peaks</p>
         </div>
     </div>
 
@@ -337,16 +385,15 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="#easy">Easy Trails</a></li>
-                <li><a href="#moderate">Moderate Trails</a></li>
-                <li><a href="#difficult">Difficult Trails</a></li>
+                <li><a href="#medium">Medium Trails</a></li>
+                <li><a href="#hard">Hard Trails</a></li>
             </ul>
         </div>
     </nav>
     
     <div class="container">
-        <!-- Overview -->
         <section id="overview">
-            <h2><i class="fas fa-mountain"></i> Taiwan Hiking Guide</h2>
+            <h2>Taiwan Hiking Guide</h2>
             <p>Taiwan offers an incredible diversity of hiking experiences, from leisurely urban trails to challenging alpine ascents. With over 200 peaks exceeding 3,000 meters, the island is a true paradise for outdoor enthusiasts.</p>
             
             <div class="highlight-box">
@@ -354,22 +401,23 @@
             </div>
         </section>
 
-        <!-- Easy Trails -->
-        <section id="easy">
-            <h2><i class="fas fa-hiking"></i> Easy Hiking Trails</h2>
-            <p>Perfect for beginners, families, or those looking for a less strenuous outdoor experience with rewarding views.</p>
+        <section class="hiking-trails">
+            <h2><i class="fas fa-hiking"></i>Hiking Trails</h2>
+            <p>Recommended mountain trails in Taiwan for different difficulty levels. Perfect for people who search outdoor activities with rewarding views.</p>
             
-            <div class="trail-grid">
+            <div class="trail-grid" id="easy">
                 <div class="trail-card easy">
                     <div class="trail-header">
                         <div>
                             <div class="trail-name">Elephant Mountain (象山)</div>
-                            <div class="trail-location">Taipei</div>
+                            <div class="trail-location"><i class="fas fa-map-marker-alt"></i>Taipei</div>
                         </div>
                         <span class="difficulty-badge easy">Easy</span>
                     </div>
+                    <div class="content-image">
+                        <img src="elephantmountain.jpg" alt="Elephant Mountain">
+                    </div>
                     <p>A short but steep climb offering the most iconic postcard view of Taipei 101 and the city. The trail consists mainly of stone steps and takes about 15-20 minutes to reach the main viewpoint.</p>
-                    
                     <div class="trail-features">
                         <div class="feature">
                             <i class="fas fa-clock"></i>
@@ -390,12 +438,14 @@
                     <div class="trail-header">
                         <div>
                             <div class="trail-name">Yangmingshan National Park (陽明山國家公園)</div>
-                            <div class="trail-location">Taipei</div>
+                            <div class="trail-location"><i class="fas fa-map-marker-alt"></i>Taipei</div>
                         </div>
                         <span class="difficulty-badge easy">Easy</span>
                     </div>
+                    <div class="content-image">
+                        <img src="yanmingshan.jpg" alt="Yangmingshan">
+                    </div>
                     <p>Offers many well-paved, gentle trails like the Qixing Mountain trail (to the main peak) with fantastic volcanic scenery and hot springs. The park features colorful flowers in spring and comfortable temperatures year-round.</p>
-                    
                     <div class="trail-features">
                         <div class="feature">
                             <i class="fas fa-clock"></i>
@@ -412,24 +462,20 @@
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Moderate Trails -->
-        <section id="moderate">
-            <h2><i class="fas fa-person-hiking"></i> Moderate Hiking Trails</h2>
-            <p>These trails offer more challenge with longer distances or elevation gains, suitable for regular hikers with some experience.</p>
-            
-            <div class="trail-grid">
-                <div class="trail-card moderate">
+            <div class="trail-grid" id="medium">
+                <div class="trail-card medium">
                     <div class="trail-header">
                         <div>
                             <div class="trail-name">Taroko Gorge Trails (太魯閣峽谷)</div>
-                            <div class="trail-location">Hualien</div>
+                            <div class="trail-location"><i class="fas fa-map-marker-alt"></i>Hualien</div>
                         </div>
-                        <span class="difficulty-badge moderate">Moderate</span>
+                        <span class="difficulty-badge medium">Medium</span>
+                    </div>
+                    <div class="content-image">
+                        <img src="taorokonationalpark.jpg" alt="Elephant Mountain">
                     </div>
                     <p>Trails like the Shakadang Trail and Baiyang Trail offer relatively flat walks with breathtaking views of marble cliffs and turquoise rivers. The gorge features some of Taiwan's most dramatic landscapes.</p>
-                    
                     <div class="trail-features">
                         <div class="feature">
                             <i class="fas fa-clock"></i>
@@ -446,16 +492,18 @@
                     </div>
                 </div>
                 
-                <div class="trail-card moderate">
+                <div class="trail-card medium">
                     <div class="trail-header">
                         <div>
                             <div class="trail-name">Alishan National Scenic Area (阿里山國家風景區)</div>
-                            <div class="trail-location">Chiayi County</div>
+                            <div class="trail-location"><i class="fas fa-map-marker-alt"></i>Chiayi County</div>
                         </div>
-                        <span class="difficulty-badge moderate">Moderate</span>
+                        <span class="difficulty-badge medium">Medium</span>
+                    </div>
+                    <div class="content-image">
+                        <img src="alishanforestrail.jpg" alt="Alishan Mountain">
                     </div>
                     <p>Famous for its sea of clouds, ancient cypress forests, and sunrise views over the mountains, accessible via forest railways and trails. The area is particularly magical at sunrise when the clouds form an ocean-like vista.</p>
-                    
                     <div class="trail-features">
                         <div class="feature">
                             <i class="fas fa-clock"></i>
@@ -472,24 +520,20 @@
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Difficult Trails -->
-        <section id="difficult">
-            <h2><i class="fas fa-mountain-sun"></i> Difficult Hiking Trails</h2>
-            <p>Challenging high-altitude hikes that require good physical fitness, proper gear, and often permits. These offer the most spectacular views in Taiwan.</p>
-            
-            <div class="trail-grid">
-                <div class="trail-card difficult">
+            <div class="trail-grid" id="hard">
+                <div class="trail-card hard">
                     <div class="trail-header">
                         <div>
                             <div class="trail-name">Yushan Main Peak (玉山主峰)</div>
-                            <div class="trail-location">Yushan National Park</div>
+                            <div class="trail-location"><i class="fas fa-map-marker-alt"></i>Yushan National Park</div>
                         </div>
-                        <span class="difficulty-badge difficult">Difficult</span>
+                        <span class="difficulty-badge hard">Hard</span>
+                    </div>
+                    <div class="content-image">
+                        <img src="yushannational.jpg" alt="Yu Mountain">
                     </div>
                     <p>The highest peak in Northeast Asia at 3,952 meters. Requires a permit and good physical fitness, but the "roof of Taiwan" view is unparalleled. The hike typically takes 2 days with an overnight stay at Paiyun Lodge.</p>
-                    
                     <div class="trail-features">
                         <div class="feature">
                             <i class="fas fa-clock"></i>
@@ -506,21 +550,22 @@
                     </div>
                     
                     <div class="permit-notice">
-                        <i class="fas fa-exclamation-circle"></i>
                         <strong>Permit Required:</strong> Apply well in advance through Yushan National Park website
                     </div>
                 </div>
                 
-                <div class="trail-card difficult">
+                <div class="trail-card hard">
                     <div class="trail-header">
                         <div>
                             <div class="trail-name">Xue Mountain (Snow Mountain) (雪山)</div>
-                            <div class="trail-location">Shei-Pa National Park</div>
+                            <div class="trail-location"><i class="fas fa-map-marker-alt"></i>Shei-Pa National Park</div>
                         </div>
-                        <span class="difficulty-badge difficult">Difficult</span>
+                        <span class="difficulty-badge hard">Hard</span>
+                    </div>
+                    <div class="content-image">
+                        <img src="xuemountain.jpg" alt="Xue Mountain">
                     </div>
                     <p>Taiwan's second-highest peak, famous for the stunning "Holy Ridge" and the cirque known as Snow Mountain's Main Peak. The trail features diverse landscapes including forests, alpine lakes, and dramatic ridgelines.</p>
-                    
                     <div class="trail-features">
                         <div class="feature">
                             <i class="fas fa-clock"></i>
@@ -537,14 +582,12 @@
                     </div>
                     
                     <div class="permit-notice">
-                        <i class="fas fa-exclamation-circle"></i>
                         <strong>Permit Required:</strong> Apply through Shei-Pa National Park administration
                     </div>
                 </div>
             </div>
-            
             <div class="highlight-box">
-                <p><strong>High Mountain Preparation:</strong> For difficult hikes, proper acclimatization is essential to avoid altitude sickness. Bring warm clothing regardless of season, as temperatures can drop below freezing at high elevations. Always hike with a partner and carry emergency supplies.</p>
+                <p><strong>High Mountain Preparation:</strong> For hard hikes, proper acclimatization is essential to avoid altitude sickness. Bring warm clothing regardless of season, as temperatures can drop below freezing at high elevations. Always hike with a partner and carry emergency supplies.</p>
             </div>
         </section>
     </div>
